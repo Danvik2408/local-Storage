@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        .wrap{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .buttons{
+            width: 100%;
+            padding-left: 500px;
+            padding-right: 500px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .changeColorBtn{
+            width: 150px;
+            height: 45px;
+            background-color: royalblue;
+            border-radius: 10px;
+            border: none;
+            box-shadow: 0 0 10px blue;
+            color: #fff;
+            font-weight: 500;
+            font-family: monospace;
+            cursor: pointer;
+        }
+        .themes{
+            width: 100px;
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .theme{
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+        
+        }
+        #color{
+            border: none;
+            width: 150px;
+            height: 30px;
+            margin-top: 10px;
+        }
+        #colorInp{
+            border: none;
+            width: 150px;
+            height: 30px;
+            margin-top: 10px;
+        }
+        .p{
+            width: 600px;
+            color: #555;
+            font-size: 16px;
+            font-weight: 500;
+            font-family: monospace;
+            transition: 1s;
+            animation-duration: 2s;
+            animation-name: anim;
+        }
+        h2{
+            color: #000;
+            font-size: 32px;
+            font-weight: 700;
+            font-family: monospace;
+            margin: 10px;
+        }
+        .text{
+            transition: 1s;
+            animation-duration: 4s;
+            animation-name: text2;
+            margin-top: 100px;
+            margin-bottom: 100px;
+        }
+        @keyframes anim {
+            10%{
+              margin-right: 2500px;
+            }
+            100%{
+                margin-right: 0px;
+            }
+        }
+        @keyframes text2 {
+            10%{
+              margin-right: 500px;
+            }
+            100%{
+                margin-right: 0px;
+            }
+        }
+        .nothing{
+            margin-left: 10px;
+            margin-right: 20px;
+        }
+        .changeh2Btn{
+            width: 150px;
+            height: 45px;
+            background-color: royalblue;
+            border-radius: 10px;
+            border: none;
+            box-shadow: 0 0 10px blue;
+            color: #fff;
+            font-weight: 500;
+            font-family: monospace;
+            cursor: pointer;
+        }
+        .ligth{
+            background-image: url(https://static.thenounproject.com/png/2856492-200.png);
+            background-size: cover;
+        }
+        .dark{
+            background-image: url(https://static.thenounproject.com/png/1664849-200.png);
+            background-size: cover;
+        }
+        .deleate{
+            width: 150px;
+            height: 45px;
+            background-color: royalblue;
+            border-radius: 10px;
+            border: none;
+            box-shadow: 0 0 10px blue;
+            color: #fff;
+            font-weight: 500;
+            font-family: monospace;
+            cursor: pointer; 
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="wrap">
+
+        <div class="buttons">
+            <div class="nothing">
+                <button class="changeColorBtn">Save text color</button>
+            <input type="color"id="color">
+            </div>
+            <div class="nothing">
+                <button class="changeh2Btn">Change h2 color </button>
+                <input type="color"id="colorInp">
+            </div>
+            <div class="nothing">
+                <button class="deleate">Deleate</button>
+            </div>
+            <div class="themes">
+                <div class="ligth theme"></div>
+                <div class="dark theme"></div>
+            </div>
+        </div>
+
+        <div class="text">
+            <h2 class="h2">Що таке Local Storage</h2>
+            <p class="p">Об'єкти веб-сховища localStorage дозволяють зберігати
+                пари ключ / значення в браузері.
+                Що важливо - дані, які записані, зберігаються після
+                оновлення сторінки і навіть після перезапуску браузера.
+                Скоро ми це побачимо.
+                Більшість браузерів можуть зберегти як мінімум 2
+                мегабайти даних (або більше), і цей розмір можна поміняти
+                в налаштуваннях.</p>
+            <h2 class="h2">Методи Local Storage</h2>
+            <p class="p">Об'єкти сховища localStorage надають наступні методи і
+                властивості:
+                setItem(key, value) - зберегти пару ключ / значення.
+                getItem(key) - отримати дані по ключу key.
+                remove Item(key) - видалити дані з ключем key.
+                clear () - видалити все.
+                key (index) - отримати ключ на заданій позиції.
+                length - кількість елементів в сховище.</p>
+            <h2 class="h2">Основні особливості</h2>
+            <p class="p">Цей об'єкт один на всі вкладки та вікна в рамках джерела
+                (один і той же домен / протокол / порт).
+                Дані не мають терміну давності, за яким закінчуються і
+                видаляються. Зберігаються після перезапуску браузера і
+                навіть ОС.</p>
+        </div>
+
+    </div>
+
+    <script>
+
+      localStorage.setItem('themes', false)
+      $('.dark').click(function(){
+        if(localStorage.getItem('themes')=='false'){
+            $('body').css('background-color','black')
+            $('.dark').css('background-image',`url(./image2.png)`)
+            $('.ligth').css('background-image',`url(./image1.png)`)
+            localStorage.setItem('themes', true)
+        }
+      })
+      $('.ligth').click(function(){
+        if(localStorage.getItem('themes')=='true'){
+            $('body').css('background-color','white')
+            $('.dark').css('background-image',`url(https://static.thenounproject.com/png/1664849-200.png)`)
+            $('.ligth').css('background-image',`url(https://static.thenounproject.com/png/2856492-200.png)`)
+            localStorage.setItem('themes', false)
+        }
+      })
+
+      localStorage.setItem('textColor',false)
+      
+
+      $('.changeColorBtn').click(function(){
+        let colorID = $('#color').val()
+        if(localStorage.getItem('textColor')=='false'){
+            $('.p').css('color',colorID)
+        }
+      })
+      $('.changeh2Btn').click(function(){
+        let h2ID = $('#colorInp').val()
+        if(localStorage.getItem('textColor')=='false'){
+            $('.h2').css('color',h2ID)
+        }
+      })
+      $('.deleate').click(function(){
+        $('.p').css('color','#555')
+        $('.h2').css('color','#000')
+        $('#colorInp').val('')
+        $('#color').val('')
+      })
+    </script>
+    
+</body>
+</html>
